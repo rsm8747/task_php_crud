@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label>Class</label>
-            <select name="class">
+            <select name="sclass">
                 <option value="" selected disabled>Select Class</option>
                 <?php
                 //db connection

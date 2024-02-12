@@ -12,6 +12,7 @@ include 'header.php';
     //connect with database is success or not
     $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
+    
     //check if data is present or not
     if (mysqli_num_rows($result) > 0) {
         ?>
