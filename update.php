@@ -8,6 +8,7 @@
         </div>
         <input class="submit" type="submit" name="showbtn" value="Show" />
     </form>
+    <br>
 
     <?php 
         if(isset($_POST['showbtn'])){

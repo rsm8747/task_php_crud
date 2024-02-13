@@ -5,7 +5,7 @@
     <?php
     // connection to connect db 
     include 'config.php';
-    // is superglobal variable,used to collect form data after submitting an HTML form 
+    // is superglobal variable,used to collect data after submitting an HTML form 
     $stu_id = $_GET['id'];
     $sql = "select * from student where sid= {$stu_id}";
     // used to execute a SQL query
@@ -54,6 +54,8 @@
                 </div>
                 <input class="submit" type="submit" value="Update" />
             <?php }
+    }else{
+        echo "Data is Not Present";
     } ?>
     </form>
 </div>
