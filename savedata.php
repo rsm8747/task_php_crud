@@ -39,5 +39,5 @@ if ($result) {
     header("Location: http://localhost/PHP/task_php_crud/add.php?error=sqlerror");
     exit();
 }
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
