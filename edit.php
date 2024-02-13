@@ -3,11 +3,15 @@
 <div id="main-content">
     <h2>Update Record</h2>
     <?php
-    $conn = mysqli_connect('localhost', 'root', '', 'task_php_crud') or die("Connection Failed.");
+    // connection to connect db 
+    include 'config.php';
+    // is superglobal variable,used to collect form data after submitting an HTML form 
     $stu_id = $_GET['id'];
     $sql = "select * from student where sid= {$stu_id}";
+    // used to execute a SQL query
     $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
-
+    
+    // number of rows returned from a SELECT query.
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_array($result)) {
 

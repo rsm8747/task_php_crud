@@ -16,7 +16,7 @@
                 <option value="" selected disabled>Select Class</option>
                 <?php
                 //db connection
-                    $conn = mysqli_connect('localhost','root','','task_php_crud');
+                    include 'config.php';
                     $sql = "select * from  student_class";
                     $result = mysqli_query($conn, $sql) or die("Query Unsuccessful");
                 //while loop to fetch and show data cid and cname 
