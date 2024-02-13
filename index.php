@@ -12,7 +12,6 @@ body {
   background-size: cover;
 }
 </style> -->
-
     <h2>All Students</h2>
     
     <?php
@@ -20,7 +19,9 @@ body {
     //connect with database
     include 'config.php';
     //to get data using select 
-    $sql = "Select * from student join student_class where student.sclass = student_class.cid";
+    // $sql = "Select * from student join student_class where student.sclass = student_class.cid";
+    $sql = "SELECT * FROM student JOIN student_class ON student.sclass = student_class.cid ORDER BY sid ASC";
+
     //connect with database is success or not
     $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
@@ -39,7 +40,6 @@ body {
             </thead>
             <tbody>
                 <?php
-                //to fetching data from db 
                 //pass db col name in associative array 
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
