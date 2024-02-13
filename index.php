@@ -1,12 +1,24 @@
 <?php
 include 'header.php';
 ?>
+
 <div id="main-content">
+<!-- 
+<style>
+body {
+    background-image: url('130.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style> -->
+
     <h2>All Students</h2>
+    
     <?php
 
     //connect with database
-    $conn = mysqli_connect('localhost', 'root', '', 'task_php_crud') or die('Connection Failed');
+    include 'config.php';
     //to get data using select 
     $sql = "Select * from student join student_class where student.sclass = student_class.cid";
     //connect with database is success or not
@@ -49,7 +61,7 @@ include 'header.php';
                         </td>
                         <td>
                             <a href='edit.php?id=<?php echo $row['sid'];?> '>Edit</a>
-                            <a href='delete-inline.php'>Delete</a>
+                            <a href='delete-inline.php?id=<?php echo $row['sid'];?> '>Delete</a>
                         </td>
                     </tr>
                     <?php

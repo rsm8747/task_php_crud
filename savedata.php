@@ -5,7 +5,8 @@
     $stu_phone = $_POST['sphone'];
 
     //mysql connection
-    $conn = mysqli_connect('localhost', 'root', '', 'task_php_crud') or die('' . mysqli_connect_error());
+    include'config.php';
+    // $conn = mysqli_connect('localhost', 'root', '', 'task_php_crud') or die('' . mysqli_connect_error());
     //insert data into db
     $sql = "insert into student(sname,saddress,sclass,sphone) values('{$stu_name}','{$stu_address}','{$stu_class}','{$stu_phone}')";
     $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
