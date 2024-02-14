@@ -42,8 +42,6 @@
                             }
                             echo "<option {$select} value ='{$row1['cid']}'>{$row1['cname']}</option>";
                         }
-
-
                         echo "</select>";
                     }
                     ?>
