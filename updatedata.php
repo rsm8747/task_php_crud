@@ -9,7 +9,8 @@
     include 'config.php';
     // Check if any required field is empty
     if (empty($stu_name) || empty($stu_address) || empty($stu_class) || empty($stu_phone)) {
-        echo "Please fill out all fields";
+        // echo "Please fill out all fields";
+        header ('http:http://localhost/PHP/task_php_crud/edit.php');
         exit;
     }
     // Check if the updated phone number already exists 

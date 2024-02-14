@@ -8,11 +8,7 @@
         header("Location: http://localhost/PHP/task_php_crud/index.php");
         mysqli_close($conn);
     }
-
-
 ?>
-
-
 <div id="main-content">
     <h2>Delete Record</h2>
     <form class="post-form" action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
