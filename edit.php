@@ -40,26 +40,26 @@
                         }
                         ?>
                     </div>
-                    <!-- edit for city country state -->
+                    <!-- Add for country state city -->
                     <div class="form-group">
                         <label>Country: </label>
                         <select id="country" name="country">
-                            <option value="<?php echo $row['country'] ?>" selected disabled>Select Country</option>
+                            <option value="" selected disabled>Select Country</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>State: </label>
                         <select id="states" name="state">
-                            <option value="<?php echo $row['state'] ?>" selected disabled>Select State</option>
+                            <option value="" selected disabled>Select State</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>City: </label>
                         <select id="cities" name="city">
-                            <option value="<?php echo $row['city'] ?>" selected disabled>Select city</option>
+                            <option value="" selected disabled>Select City</option>
                         </select>
                     </div>
-                    <!-- ends here  -->
+                    <!-- Ends here -->
                     <div class="form-group">
                         <label>Address</label>
                         <input type="text" name="saddress" value="<?php echo $row['saddress'] ?>" />
@@ -81,5 +81,45 @@
     ?>
 </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function loadData(type, category_id = '') {
+            $.ajax({
+                url: "load-cs.php",
+                type: "POST",
+                data: { type: type, id: category_id },
+                success: function (data) {
+                    if (type == "stateData") {
+                        $("#states").html(data);
+                    } else if (type == "cityData") {
+                        $("#cities").html(data);
+                    } else {
+                        $("#country").append(data);
+                    }
+                }
+            });
+        }
+        loadData("countryData");
 
+        $('#country').on('change', function () {
+            var country = $('#country').val();
+            if (country != "") {
+                loadData("stateData", country);
+            } else {
+                $("#states").html("");
+                $("#cities").html("");
+            }
+        });
+
+        $('#states').on('change', function () {
+            var state = $('#states').val();
+            if (state != "") {
+                loadData("cityData", state);
+            } else {
+                $("#cities").html("");
+            }
+        });
+    });
+</script>
 </html>

@@ -9,19 +9,19 @@
         <div class="form-group">
             <label>Country: </label>
             <select id="country" name="country">
-                <option value="" selected disabled>Select country</option>
+                <option value="" selected disabled>Select Country</option>
             </select>
         </div>
         <div class="form-group">
             <label>State: </label>
             <select id="states" name="state">
-                <option value="" selected disabled>Select state</option>
+                <option value="" selected disabled>Select State</option>
             </select>
         </div>
         <div class="form-group">
             <label>City: </label>
             <select id="cities" name="city">
-                <option value="" selected disabled>Select city</option>
+                <option value="" selected disabled>Select City</option>
             </select>
         </div>
         <div class="form-group">
