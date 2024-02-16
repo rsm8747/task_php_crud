@@ -26,21 +26,69 @@
                         </div>
                         <div class="form-group">
                         <label>Country: </label>
-                        <select id="country" name="country">
+                        <?php
+                        $sql2 = "SELECT * FROM country";
+                        $result2 = mysqli_query($conn, $sql2);
+                        if (mysqli_num_rows($result2) > 0) {
+                            echo '<select id="country" name="country">';
+                            while ($row2 = mysqli_fetch_array($result2)) {
+                                if ($row['country'] == $row2['id']) {
+                                    $select = "selected";
+                                } else {
+                                    $select = "";
+                                }
+                                echo "<option {$select} value ='{$row2['id']}'>{$row2['country_name']}</option>";
+                            }
+                            echo "</select>";
+                        }
+                        ?>
+                        <!-- <select id="country" name="country">
                             <option value="" selected disabled>Select Country</option>
-                        </select>
+                        </select> -->
                     </div>
                     <div class="form-group">
                         <label>State: </label>
-                        <select id="states" name="state">
+                        <?php
+                        $sql3 = "SELECT * FROM states";
+                        $result3 = mysqli_query($conn, $sql3);
+                        if (mysqli_num_rows($result3) > 0) {
+                            echo '<select id="states" name="state">';
+                            while ($row3 = mysqli_fetch_array($result3)) {
+                                if ($row['state'] == $row3['id']) {
+                                    $select = "selected";
+                                } else {
+                                    $select = "";
+                                }
+                                echo "<option {$select} value ='{$row3['id']}'>{$row3['state_name']}</option>";
+                            }
+                            echo "</select>";
+                        }
+                        ?>
+                        <!-- <select id="states" name="state">
                             <option value="" selected disabled>Select State</option>
-                        </select>
+                        </select> -->
                     </div>
                     <div class="form-group">
                         <label>City: </label>
-                        <select id="cities" name="city">
+                        <?php
+                        $sql2 = "SELECT * FROM cities";
+                        $result2 = mysqli_query($conn, $sql2);
+                        if (mysqli_num_rows($result2) > 0) {
+                            echo '<select id="cities" name="city">';
+                            while ($row2 = mysqli_fetch_array($result2)) {
+                                if ($row['cities'] == $row2['id']) {
+                                    $select = "selected";
+                                } else {
+                                    $select = "";
+                                }
+                                echo "<option {$select} value ='{$row2['id']}'>{$row2['city_name']}</option>";
+                            }
+                            echo "</select>";
+                        }
+                        ?>
+                        <!-- <select id="cities" name="city">
                             <option value="" selected disabled>Select City</option>
-                        </select>
+                        </select> -->
                     </div>
                         <div class="form-group">
                             <label>Address</label>

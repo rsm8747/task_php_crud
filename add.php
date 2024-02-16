@@ -50,6 +50,7 @@
         <div class="form-group">
             <label>Phone</label>
             <input type="text" name="sphone" />
+            
         </div>
         <input class="submit" type="submit" value="Save" />
     </form>
