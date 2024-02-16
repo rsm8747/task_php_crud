@@ -4,34 +4,34 @@
     <form class="post-form" action="savedata.php" method="post">
         <div class="form-group">
             <label>Name: </label>
-            <input type="text" name="sname" />
+            <input type="text" name="sname" required />
         </div>
         <div class="form-group">
             <label>Country: </label>
-            <select id="country" name="country">
+            <select id="country" name="country" required>
                 <option value="" selected disabled>Select Country</option>
             </select>
         </div>
         <div class="form-group">
             <label>State: </label>
-            <select id="states" name="state">
+            <select id="states" name="state" required>
                 <option value="" selected disabled>Select State</option>
             </select>
         </div>
         <div class="form-group">
             <label>City: </label>
-            <select id="cities" name="city">
+            <select id="cities" name="city" required>
                 <option value="" selected disabled>Select City</option>
             </select>
         </div>
         <div class="form-group">
             <label>Building Name: </label>
-            <input type="text" name="saddress" />
+            <input type="text" name="saddress" required />
         </div>
 
         <div class="form-group">
             <label>Class</label>
-            <select name="sclass">
+            <select name="sclass" required>
                 <option value="" selected disabled>Select Class</option>
                 <?php
                 include 'config.php';
@@ -49,7 +49,7 @@
         </div>
         <div class="form-group">
             <label>Phone</label>
-            <input type="text" name="sphone" />
+            <input type="text" name="sphone" required/>
             
         </div>
         <input class="submit" type="submit" value="Save" />

@@ -4,7 +4,7 @@
     <form class="post-form" action="<?php $_SERVER['PHP_SELF'];?>" method="post">
         <div class="form-group">
             <label>ID</label>
-            <input type="text" name="sid" />
+            <input type="text" name="sid" required/>
         </div>
         <input class="submit" type="submit" name="showbtn" value="Show" />
     </form>
@@ -22,7 +22,7 @@
                         <div class="form-group">
                             <label for="">Name</label>
                             <input type="hidden" name="sid"  value="<?php echo $row ['sid'];?>" />
-                            <input type="text" name="sname" value="<?php echo $row ['sname'];?>" />
+                            <input type="text" name="sname" value="<?php echo $row ['sname'];?>"required />
                         </div>
                         <div class="form-group">
                         <label>Country: </label>
@@ -37,7 +37,7 @@
                                 } else {
                                     $select = "";
                                 }
-                                echo "<option {$select} value ='{$row2['id']}'>{$row2['country_name']}</option>";
+                                echo "<option {$select} value ='{$row2['id']}'>{$row2['country_name']}</option>required";
                             }
                             echo "</select>";
                         }
@@ -59,7 +59,7 @@
                                 } else {
                                     $select = "";
                                 }
-                                echo "<option {$select} value ='{$row3['id']}'>{$row3['state_name']}</option>";
+                                echo "<option {$select} value ='{$row3['id']}'>{$row3['state_name']}</option>required";
                             }
                             echo "</select>";
                         }
@@ -92,7 +92,7 @@
                     </div>
                         <div class="form-group">
                             <label>Address</label>
-                            <input type="text" name="saddress" value="<?php echo $row ['saddress'];?>" />
+                            <input type="text" name="saddress" value="<?php echo $row ['saddress'];?>" required/>
                         </div>
                         <div class="form-group">
                         <label>Class</label>
@@ -107,7 +107,7 @@
                             }else{
                                 $select = "";
                             }
-                            echo "<option {$select} value ='{$row1['cid']}'>{$row1['cname']}</option>";
+                            echo "<option {$select} value ='{$row1['cid']}'>{$row1['cname']}</option>required";
                         }
                         echo "</select>";
                     }
@@ -115,7 +115,7 @@
                         </div>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input type="text" name="sphone" value="<?php echo $row ['sphone'];?>" />
+                            <input type="text" name="sphone" value="<?php echo $row ['sphone'];?>"required />
                         </div>
                     <input class="submit" type="submit" value="Update"  />
                     </form>
