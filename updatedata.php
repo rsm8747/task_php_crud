@@ -12,14 +12,14 @@ $city_id = $_POST['city'];
 include 'config.php';
 // Check if any required field is empty
 if (empty($stu_id) || empty($stu_name) || empty($stu_address) || empty($stu_class) || empty($stu_phone) || empty($country_id) || empty($state_id) || empty($city_id)) {
-    echo "<script>alert('Please fill out all fields'); window.location.href='http://localhost/PHP/task_php_crud/edit.php?id={$stu_id}';</script>";
+    // echo "<script>alert('Please fill out all fields'); window.location.href='http://localhost/PHP/task_php_crud/edit.php?id={$stu_id}';</script>";
     exit;
 }
 // Check if the updated phone number already exists 
 $sql_check_phone = "SELECT * FROM student WHERE sphone = '{$stu_phone}' AND sid != {$stu_id}";
 $result_check_phone = mysqli_query($conn, $sql_check_phone);
 if (mysqli_num_rows($result_check_phone) > 0) {
-    echo "<script>alert('Phone Number is already exists, add another one..'); window.location.href='http://localhost/PHP/task_php_crud/edit.php?id={$stu_id}';</script>";
+    // echo "<script>alert('Phone Number is already exists, add another one..'); window.location.href='http://localhost/PHP/task_php_crud/edit.php?id={$stu_id}';</script>";
     exit;
 }
 // Fetch country name

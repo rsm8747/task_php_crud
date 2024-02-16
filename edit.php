@@ -19,9 +19,9 @@
                     <div class="form-group">
                         <label>Name</label>
                         <input type="hidden" name="sid" value="<?php echo $row['sid'] ?>" />
-                        <input type="text" name="sname" value="<?php echo $row['sname'] ?>" />
+                        <input type="text" name="sname" value="<?php echo $row['sname'] ?>"required />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" required>
                         <label>Class</label>
                         <?php
                         $sql1 = "SELECT * FROM student_class";
@@ -41,7 +41,7 @@
                         ?>
                     </div>
                     <!-- Add for country state city -->
-                    <div class="form-group">
+                    <div class="form-group" required>
                         <label>Country: </label>
                         <?php
                         $sql2 = "SELECT * FROM country";
@@ -66,7 +66,7 @@
                             <option value="" selected disabled>Select Country</option>
                         </select> -->
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" required>
                         <label>State: </label>
                         <?php
                         $sql3 = "SELECT * FROM states";
@@ -89,7 +89,7 @@
                             <option value="" selected disabled>Select State</option>
                         </select> -->
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" required>
                         <label>City: </label>
                         <?php
                         $sql2 = "SELECT * FROM cities";
@@ -112,13 +112,13 @@
                         </select> -->
                     </div>
                     <!-- Ends here -->
-                    <div class="form-group">
+                    <div class="form-group" required>
                         <label>Address</label>
-                        <input type="text" name="saddress" value="<?php echo $row['saddress'] ?>" />
+                        <input type="text" name="saddress" value="<?php echo $row['saddress'] ?>" required/>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" required>
                         <label>Phone</label>
-                        <input type="text" name="sphone" value="<?php echo $row['sphone'] ?>" />
+                        <input type="text" name="sphone" value="<?php echo $row['sphone'] ?>"required />
                     </div>
                     <input class="submit" type="submit" value="Update" />
                 </form>
