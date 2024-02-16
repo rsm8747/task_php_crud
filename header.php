@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body >
     
     <div id="wrapper" style="background-image: url('130.jpg'); background-repeat: no-repeat; background-attachment:fixed; background-size:100% 100%;">
-        <div id="header" >
+        <div id="header" style="background-image: url('9784.jpg'); background-repeat: no-repeat; background-attachment:fixed; background-size:100% 100%;">
             <h1>Student Class</h1>
         </div>
-        <div id="menu">
+        <div id="menu" >
             <ul>
                 <li>
                     <a href="index.php">Home</a>

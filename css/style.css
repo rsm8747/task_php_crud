@@ -2,20 +2,20 @@ body {
   font: 16px arial;
   margin: 0;
   padding: 0;
-  /* background-image: url('130.jpg'); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
 
 #wrapper {
+  
   width: 1000px;
   margin: 50px auto 0;
   background-color: #fff;
 }
 #header {
   text-align: center;
-
+  
   padding: 10px;
 }
 #header h1 {
