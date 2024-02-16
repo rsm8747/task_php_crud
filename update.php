@@ -9,25 +9,39 @@
         <input class="submit" type="submit" name="showbtn" value="Show" />
     </form>
     <br>
-
     <?php 
         if(isset($_POST['showbtn'])){
             $conn = mysqli_connect('localhost','root','','task_php_crud')or die("Connection Failed");
             $stu_id = $_POST['sid'];
             $sql = "SELECT * FROM student WHERE sid = {$stu_id}";
             $result = mysqli_query($conn,$sql) or die("Query Unsuccessful.");
-            
             if(mysqli_num_rows($result)>0){
                 while($row = mysqli_fetch_assoc($result)){
-            
     ?>
-
                     <form class="post-form" action="updatedata.php" method="post">
                         <div class="form-group">
                             <label for="">Name</label>
                             <input type="hidden" name="sid"  value="<?php echo $row ['sid'];?>" />
                             <input type="text" name="sname" value="<?php echo $row ['sname'];?>" />
                         </div>
+                        <div class="form-group">
+                        <label>Country: </label>
+                        <select id="country" name="country">
+                            <option value="" selected disabled>Select Country</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>State: </label>
+                        <select id="states" name="state">
+                            <option value="" selected disabled>Select State</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>City: </label>
+                        <select id="cities" name="city">
+                            <option value="" selected disabled>Select City</option>
+                        </select>
+                    </div>
                         <div class="form-group">
                             <label>Address</label>
                             <input type="text" name="saddress" value="<?php echo $row ['saddress'];?>" />
@@ -47,8 +61,6 @@
                             }
                             echo "<option {$select} value ='{$row1['cid']}'>{$row1['cname']}</option>";
                         }
-
-
                         echo "</select>";
                     }
                     ?>  
@@ -67,4 +79,45 @@
 </div>
 </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function loadData(type, category_id = '') {
+            $.ajax({
+                url: "load-cs.php",
+                type: "POST",
+                data: { type: type, id: category_id },
+                success: function (data) {
+                    if (type == "stateData") {
+                        $("#states").html(data);
+                    } else if (type == "cityData") {
+                        $("#cities").html(data);
+                    } else {
+                        $("#country").append(data);
+                    }
+                }
+            });
+        }
+        loadData("countryData");
+
+        $('#country').on('change', function () {
+            var country = $('#country').val();
+            if (country != "") {
+                loadData("stateData", country);
+            } else {
+                $("#states").html("");
+                $("#cities").html("");
+            }
+        });
+
+        $('#states').on('change', function () {
+            var state = $('#states').val();
+            if (state != "") {
+                loadData("cityData", state);
+            } else {
+                $("#cities").html("");
+            }
+        });
+    });
+</script>
 </html>
