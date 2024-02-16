@@ -1,7 +1,7 @@
 <?php
 // Check if all required fields are filled
 if (empty($_POST['sname']) || empty($_POST['saddress']) || empty($_POST['sclass']) || empty($_POST['sphone'])|| empty($_POST['country'])|| empty($_POST['state'])|| empty($_POST['city'])) {
-    echo "<script>alert('Please fill in all fields.'); window.location.href='http://localhost/PHP/task_php_crud/add.php';</script>";
+    // echo "<script>alert('Please fill in all fields.'); window.location.href='http://localhost/PHP/task_php_crud/add.php';</script>";
     exit();
 }
 
