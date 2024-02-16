@@ -69,6 +69,7 @@ $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
             <a href="index.php?page=<?php echo ($page + 1); ?>"><button type="button">  Next  </button></a>
         <?php endif; ?>
     </div>
+    
     <?php } else {
         echo "<h2>No Record Found</h2>";
     }
